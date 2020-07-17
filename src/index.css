@@ -1,0 +1,99 @@
+.cdx-buttonlink {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.cdx-buttonlink [contentEditable=true][data-placeholder]::before{
+    position: absolute;
+    content: attr(data-placeholder);
+    color: #707684;
+    font-weight: normal;
+    opacity: 0;
+}
+
+.cdx-buttonlink [contentEditable=true][data-placeholder]:empty::before {
+    opacity: 1;
+    width: 100%;
+}
+
+.cdx-buttonlink [contentEditable=true][data-placeholder]:empty:focus::before {
+    opacity: 0;
+}
+
+.cdx-buttonlink::before {
+    content: '';
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.15,5.054C18.15,3.89 17.155,2.945 15.93,2.945L3.266,2.945C2.041,2.945 1.047,3.89 1.047,5.054L1.047,14.896C1.047,16.06 2.041,17.005 3.266,17.005L15.93,17.005C17.155,17.005 18.15,16.06 18.15,14.896L18.15,5.054ZM16.045,5.054L16.045,14.896C16.045,14.956 15.994,15.005 15.93,15.005L3.266,15.005C3.203,15.005 3.152,14.956 3.152,14.896C3.152,14.896 3.152,5.054 3.152,5.054C3.152,4.994 3.203,4.945 3.266,4.945L15.93,4.945C15.994,4.945 16.045,4.994 16.045,5.054Z'/%3E%3C/svg%3E");
+    width: 18px;
+    height: 18px;
+    background-size: 18px 18px;
+    position: absolute;
+    margin-top: 12px;
+    left: -30px;
+}
+
+@media all and (max-width: 735px) {
+    .cdx-buttonlink::before {
+        display: none;
+    }
+}
+
+.cdx-buttonlink__link {
+    /* no styles */
+}
+
+.cdx-buttonlink__title {
+    margin-bottom: 6px;
+    text-align: center;
+}
+
+.cdx-buttonlink__title.full {
+    /* no extra styles */
+}
+
+.cdx-buttonlink__title.center {
+    display: inline-block;
+    width: auto;
+    min-width: 100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cdx-buttonlink__title.left {
+    display: inline-block;
+    width: auto;
+    min-width: 100px;
+    margin-right: auto;
+}
+
+.cdx-buttonlink__title.right {
+    display: inline-block;
+    width: auto;
+    min-width: 100px;
+    margin-left: auto;
+}
+
+.cdx-buttonlink__title.default {
+    background-color: #777;
+    color: #fff;
+}
+
+.cdx-buttonlink__title.info {
+    background-color: #1D67BD;
+    color: #fff;
+}
+
+.cdx-buttonlink__title.success {
+    background-color: #5cb85c;
+    color: #fff;
+}
+
+.cdx-buttonlink__title.warning {
+    background-color: #f0ad4e;
+    color: #313131;
+}
+
+.cdx-buttonlink__title.danger {
+    background-color: #d9534f;
+    color: #fff;
+}
