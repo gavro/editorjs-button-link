@@ -8,7 +8,7 @@ module.exports = {
                 use: [
                     {
                         loader: 'babel-loader',
-                        query: {
+                        options: {
                             presets: ['@babel/preset-env'],
                         },
                     },
@@ -23,7 +23,10 @@ module.exports = {
             },
             {
                 test: /\.svg$/,
-                loader: 'svg-inline-loader?removeSVGTagAttrs=false'
+                loader: 'svg-inline-loader',
+                options: {
+                    removeSVGTagAttrs: false,
+                }
             }
         ]
     },
